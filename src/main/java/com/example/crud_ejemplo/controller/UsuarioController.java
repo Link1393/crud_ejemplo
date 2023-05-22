@@ -27,11 +27,6 @@ public class UsuarioController {
         return this.usuarioService.getUsuarios();
     }
 
-    @PostMapping
-    public UsuarioModel saveUsuario(@RequestBody UsuarioModel usuario) {
-        return this.usuarioService.saveUsuario(usuario);
-    }
-
     @GetMapping(path = "/{id}")
     public Optional<UsuarioModel> getUsuarioById(@PathVariable("id") Long id) {
         return this.usuarioService.getUsuarioById(id);
@@ -40,6 +35,16 @@ public class UsuarioController {
     @GetMapping("/querycedula")
     public ArrayList<UsuarioModel> getUsuarioByCedula(@RequestParam("cedula") String cedula) {
         return this.usuarioService.getUsuarioByCedula(cedula);
+    }
+
+    @GetMapping("/buscar")
+    public ArrayList<UsuarioModel> getUsuariosBySearchString(@RequestParam("valor") String valorBuscado) {
+        return this.usuarioService.getUsuariosBySearchString(valorBuscado);
+    }
+
+    @PostMapping
+    public UsuarioModel saveUsuario(@RequestBody UsuarioModel usuario) {
+        return this.usuarioService.saveUsuario(usuario);
     }
 
     @DeleteMapping(path = "/{id}")

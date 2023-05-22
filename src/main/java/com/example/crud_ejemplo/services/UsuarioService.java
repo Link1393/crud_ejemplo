@@ -26,6 +26,10 @@ public class UsuarioService {
         return this.usuarioRepository.findByCedula(cedula);
     }
 
+    public ArrayList<UsuarioModel> getUsuariosBySearchString(String searchParameter) {
+        return (ArrayList<UsuarioModel>) this.usuarioRepository.findBySearchString(searchParameter);
+    }
+
     public UsuarioModel saveUsuario(UsuarioModel usuario) {
         return this.usuarioRepository.save(usuario);
     }
