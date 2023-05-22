@@ -37,7 +37,7 @@ public class UsuarioController {
         return this.usuarioService.getUsuarioById(id);
     }
 
-    @GetMapping("/queryCedula")
+    @GetMapping("/querycedula")
     public ArrayList<UsuarioModel> getUsuarioByCedula(@RequestParam("cedula") String cedula) {
         return this.usuarioService.getUsuarioByCedula(cedula);
     }
