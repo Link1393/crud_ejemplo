@@ -25,6 +25,6 @@ public class UsuarioController {
 
     @PostMapping
     public UsuarioModel saveUsuario(@RequestBody UsuarioModel usuario) {
-        return this.saveUsuario(usuario);
+        return this.usuarioService.saveUsuario(usuario);
     }
 }
