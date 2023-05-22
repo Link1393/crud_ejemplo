@@ -22,5 +22,20 @@ public class UsuarioService {
         return this.usuarioRepository.findById(id);
     }
 
-    
+    public ArrayList<UsuarioModel> getUsuarioByCedula(String cedula) {
+        return this.usuarioRepository.findByCedula(cedula);
+    }
+
+    public UsuarioModel saveUsuario(UsuarioModel usuario) {
+        return this.usuarioRepository.save(usuario);
+    }
+
+    public boolean deleteUsuario(Long id) {
+        try {
+            this.usuarioRepository.deleteById(id);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
 }
